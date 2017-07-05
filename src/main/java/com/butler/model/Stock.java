@@ -23,9 +23,10 @@ public class Stock {
     @ManyToOne(cascade = CascadeType.ALL)
     private StockType stockType;
 
-    public Stock(){}
+    public Stock() {
+    }
 
-    public Stock(Item item,int stock){
+    public Stock(Item item, int stock) {
         this.item = item;
         this.stock = stock;
     }
@@ -42,9 +43,13 @@ public class Stock {
         return stock;
     }
 
-    public void setStock(int stock) { this.stock = stock; }
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
 
-    public StockType getStockType() { return stockType; }
+    public StockType getStockType() {
+        return stockType;
+    }
 
     public void setStockType(StockType stockType) {
         this.stockType = stockType;

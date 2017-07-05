@@ -17,11 +17,18 @@ public class StockType {
 
     private String name;
 
-    public StockType(){}
+    public StockType() {
+    }
 
-    public StockType(String name){this.name = name;}
+    public StockType(String name) {
+        this.name = name;
+    }
 
-    public String getName() {return name;}
+    public String getName() {
+        return name;
+    }
 
-    public void setName(String name) {this.name = name;}
+    public void setName(String name) {
+        this.name = name;
+    }
 }

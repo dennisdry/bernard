@@ -46,20 +46,21 @@ public class ButlerUser implements Serializable {
     private List<Tag> tags = new ArrayList<>();
 
 
-    public ButlerUser(){}
-
-
-    public ButlerUser(String firstName,String lastName,String userName){
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.userName =  userName;
+    public ButlerUser() {
     }
 
-    public ButlerUser(String firstName,String lastName,String userName,List<String> phone, List<String> email){
+
+    public ButlerUser(String firstName, String lastName, String userName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.userName = userName;
+    }
+
+    public ButlerUser(String firstName, String lastName, String userName, List<String> phone, List<String> email) {
 
         this.firstName = firstName;
         this.lastName = lastName;
-        this.userName =  userName;
+        this.userName = userName;
         this.phone = phone;
         this.email = email;
 
@@ -97,7 +98,9 @@ public class ButlerUser implements Serializable {
         this.phone = phones;
     }
 
-    public void addPhone(String phone){this.phone.add(phone);}
+    public void addPhone(String phone) {
+        this.phone.add(phone);
+    }
 
     public List<String> getEmail() {
         return email;
@@ -107,7 +110,9 @@ public class ButlerUser implements Serializable {
         this.email = emails;
     }
 
-    public void addEmail(String email){ this.email.add(email);}
+    public void addEmail(String email) {
+        this.email.add(email);
+    }
 
     public List<Stock> getInventory() {
         return inventory;
@@ -117,15 +122,21 @@ public class ButlerUser implements Serializable {
         this.inventory = items;
     }
 
-    public void addItemWithStockToInventory(Stock stock){this.inventory.add(stock);}
+    public void addItemWithStockToInventory(Stock stock) {
+        this.inventory.add(stock);
+    }
 
     public List<Message> getMessages() {
         return messages;
     }
 
-    public void setMessages(ArrayList<Message> messages) {this.messages = messages;}
+    public void setMessages(ArrayList<Message> messages) {
+        this.messages = messages;
+    }
 
-    public void addMessage(Message message) {this.messages.add(message);}
+    public void addMessage(Message message) {
+        this.messages.add(message);
+    }
 
     public List<Tag> getTags() {
         return tags;
@@ -135,9 +146,12 @@ public class ButlerUser implements Serializable {
         this.tags = tags;
     }
 
-    public void addTag(Tag tag){ this.tags.add(tag);}
+    public void addTag(Tag tag) {
+        this.tags.add(tag);
+    }
 
     @Override
-    public String toString(){
-        return String.format("User[id=%d,firstName='%s', lastName='%s', userName='%s', phone='%s', email='%s',inventory='%s',messages='%s',tags='%s']", id, firstName, lastName, userName, phone, email, inventory,messages,tags);    }
+    public String toString() {
+        return String.format("User[id=%d,firstName='%s', lastName='%s', userName='%s', phone='%s', email='%s',inventory='%s',messages='%s',tags='%s']", id, firstName, lastName, userName, phone, email, inventory, messages, tags);
+    }
 }

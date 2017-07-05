@@ -18,7 +18,8 @@ public class Tag {
     @OneToOne(cascade = CascadeType.ALL)
     private TagType tagType;
 
-    public Tag(){}
+    public Tag() {
+    }
 
     public Tag(String name, TagType tagType) {
         this.name = name;

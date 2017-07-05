@@ -17,9 +17,12 @@ public class MessageType {
 
     private String name;
 
-    public MessageType(){}
+    public MessageType() {
+    }
 
-    public MessageType(String name){this.name = name;}
+    public MessageType(String name) {
+        this.name = name;
+    }
 
     public String getName() {
         return name;

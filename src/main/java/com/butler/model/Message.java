@@ -22,7 +22,8 @@ public class Message {
     @ManyToMany(cascade = CascadeType.ALL)
     private List<Tag> tags = new ArrayList<>();
 
-    public Message(){}
+    public Message() {
+    }
 
     public Message(String name, MessageType messageType) {
         this.message = name;
@@ -53,5 +54,7 @@ public class Message {
         this.tags = tags;
     }
 
-    public void addTag(Tag tag){ this.tags.add(tag);}
+    public void addTag(Tag tag) {
+        this.tags.add(tag);
+    }
 }

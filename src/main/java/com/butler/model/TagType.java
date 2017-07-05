@@ -7,7 +7,7 @@ import javax.persistence.Id;
 
 
 /**
- *  TagType instances are type(or category) attachments for Tag instances.
+ * TagType instances are type(or category) attachments for Tag instances.
  */
 @Entity
 public class TagType {
@@ -18,9 +18,12 @@ public class TagType {
 
     private String name;
 
-    public TagType(){}
+    public TagType() {
+    }
 
-    public TagType(String name){this.name = name;}
+    public TagType(String name) {
+        this.name = name;
+    }
 
     public String getName() {
         return name;
