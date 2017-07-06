@@ -14,7 +14,7 @@ $(document).ready(function () {
             $(this).removeAttr("style");
         });
 
-        $('#mainchat-comment-1').delay(3000).fadeIn(500, function(){
+        $('#mainchat-comment-1').delay(3500).fadeIn(500, function(){
             $(this).html(' 1 <span class="hidden-md-down">comments</span>');
         });
 
@@ -31,7 +31,7 @@ $(document).ready(function () {
             $(this).html(' 1 <span class="hidden-md-down">comments</span>');
         });
 
-        $('#mainchat-comment-2').delay(6500).fadeIn(500, function(){
+        $('#mainchat-comment-2').delay(6800).fadeIn(500, function(){
             $(this).html(' 2 <span class="hidden-md-down">comments</span>');
         });
 
@@ -51,7 +51,7 @@ $(document).ready(function () {
             $(this).html(' 1 <span class="hidden-md-down">comments</span>');
         });
 
-        $('#mainchat-comment-3').delay(16000).fadeIn(500, function(){
+        $('#mainchat-comment-3').delay(14000).fadeIn(500, function(){
             $(this).html(' 2 <span class="hidden-md-down">comments</span>');
         });
 
