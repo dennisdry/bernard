@@ -1,4 +1,5 @@
 import React from 'react';
+import myProfilePicture from '../../public/profile/harry_smith.png';
 
 export default class Header extends React.Component {
   render() {
@@ -29,13 +30,13 @@ export default class Header extends React.Component {
                             <div className="user-profile">
                                 <div className="image" data-toggle="tooltip" data-placement="bottom" title="Go to Your Profile">
                                     <a href="#">
-                                        <img src="assets/public/profile/harry_smith.png" />
+                                        <img src={myProfilePicture} />
                                     </a>
                                 </div>
                             </div>
                         </div>
 
-                        
+
                         <div className="mobile-menu-open">
                             <ul className="mobile-menu list-unstyled">
                                 <li>Message Board</li>
