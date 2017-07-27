@@ -56,12 +56,12 @@ button.main-button {
   margin-top: 165px;
   &.pattern-left {
     left: 0;
-    background: url("../img/pattern-left.png") no-repeat;
+    background: url("../public/pattern-left.png") no-repeat;
     background-size: 220px 1100px;
   }
   &.pattern-right {
     right: 0;
-    background: url("../img/pattern-right.png") no-repeat;
+    background: url("../public/pattern-right.png") no-repeat;
     background-size: 220px 1100px;
   }
 }
