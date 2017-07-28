@@ -30,7 +30,12 @@ module.exports = {
     extensions: ['.js', '.jsx']
   },
   module: {
-    loaders
+    loaders: [
+    {
+      test: /\.(png|jpg)$/,
+      loader: 'url?limit=25000'
+    }
+  ]
   },
   devServer: {
     contentBase: "./public",
