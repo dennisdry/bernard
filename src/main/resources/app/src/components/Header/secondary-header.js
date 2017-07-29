@@ -9,7 +9,7 @@ export default class SecondaryHeader extends React.Component {
       <div className="secondary">
           <div className="container">
               <div className="row align-items-center secondary-row">
-                <HeaderTodaysInfo />
+                <HeaderTodaysInfo birthday="Kanye West" />
                 <HeaderNotifications />
               </div>
           </div>

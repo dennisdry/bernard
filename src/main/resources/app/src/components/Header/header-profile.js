@@ -41,7 +41,7 @@ export default class ProfilePicture extends React.Component {
       <div className="col col-lg-2 hidden-md-down user-profile-wrapper">
           <div className="user-profile">
               <div className="image" id="CurrentUserProfilePicture">
-                <Avatar src={this.profilePictureUrl()} name={this.props.name} size="65" round={true} color={'#2C9366'} />
+                <Avatar src={this.profilePictureUrl()} name={this.props.name} size={65} round={true} color={'#2C9366'} />
               </div>
 
               <Tooltip placement="bottom" isOpen={this.state.tooltipOpen} target="CurrentUserProfilePicture" toggle={this.toggle}>

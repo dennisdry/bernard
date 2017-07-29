@@ -5,11 +5,7 @@ import HeaderProfile from './header-profile';
 import HeaderMenu from './header-menu';
 
 export default class PrimaryHeader extends React.Component {
-
   render() {
-
-    var currentUserName = 'The Doctor';
-
     return (
       <div className="primary">
           <div className="container">
