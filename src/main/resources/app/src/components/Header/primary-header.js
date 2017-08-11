@@ -1,7 +1,7 @@
 import React from 'react';
 
 import HeaderLogo from './header-logo';
-import HeaderProfile from './header-profile';
+import ProfilePicture from './../Profile/profile-picture';
 import HeaderMenu from './header-menu';
 
 export default class PrimaryHeader extends React.Component {
@@ -12,7 +12,7 @@ export default class PrimaryHeader extends React.Component {
               <div className="row header-row align-items-center">
                   <HeaderLogo />
                   <HeaderMenu />
-                  <HeaderProfile name="Harry Smith"/>
+                  <ProfilePicture name="Harry Smith"/>
                   <div className="mobile-menu-open">
                       <ul className="mobile-menu list-unstyled">
                           <li>Message Board</li>
