@@ -12,7 +12,7 @@ export default class ChatBox extends React.Component {
           <div className="row">
               <div className="col-lg-11 col-md-11 col-sm-10 col-xs-10 message-col">
                   <div className="card">
-                    <ChatDate />
+                    <ChatDate date="2017-08-10 14:01"/>
                     <ChatContent />
                     <ChatActionBar />
                   </div>
