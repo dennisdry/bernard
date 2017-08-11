@@ -2,18 +2,13 @@ import React from 'react';
 
 export default class ActionBarTags extends React.Component {
   render() {
+    var chatTags = [this.props.tags];
+
     return (
       <div className="col">
-          <span className="tag">
-              <a href="#">
-                  office
-              </a>
-          </span>
-          <span className="tag">
-          <a href="#">
-              repair
-          </a>
-      </span>
+        <span className="tag">
+            {chatTags}
+        </span>
       </div>
     );
   }

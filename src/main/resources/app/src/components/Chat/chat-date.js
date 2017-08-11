@@ -10,22 +10,6 @@ export default class ChatDate extends React.Component {
     //this.messageSent = this.messageSent.bind(this);
   }
 
-
-  // messageSent() {
-  //   var currentTime = new Date();
-  //   var messagePostedTime = new Date('2017-08-11T13:59-0100');
-  //   var hoursAdded = messagePostedTime.setHours(messagePostedTime.getHours() + 3);
-  //   console.log(messagePostedTime);
-  //
-  //   if (currentTime <= hoursAdded) {
-  //     // show ago
-  //     return <Moment fromNow>{messagePostedTime}</Moment>
-  //   } else {
-  //     //show date
-  //   return <Moment format="MMMM Do YYYY, HH:mm">{messagePostedTime}</Moment>
-  //   }
-  // }
-
   messageSent() {
     var currentTime = moment();
     var messagePostedTime = moment('2017-08-11 14:01');

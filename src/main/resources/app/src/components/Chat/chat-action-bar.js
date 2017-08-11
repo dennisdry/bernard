@@ -8,8 +8,8 @@ export default class ChatActionBar extends React.Component {
     return (
       <div className="action-bar">
           <div className="row align-items-center">
-              <ActionBarTags />
-              <ActionBarInteractions />
+              <ActionBarTags tags="repair, office, service" />
+              <ActionBarInteractions replies="1" />
           </div>
       </div>
     );
