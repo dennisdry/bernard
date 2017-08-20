@@ -24,7 +24,7 @@ public class WebController {
     public String findAllCustomer() {
         String result = "<html>";
 
-        for (Customer cust : customerRepository.findAll()) {
+        for (User cust : customerRepository.findAll()) {
             result += "<div>" + cust.toString() + "</div>";
         }
 
@@ -60,7 +60,7 @@ public class WebController {
     public String fetchDataByCustomerLastName(@RequestParam("lastname") String lastName) {
         String result = "<html>";
 
-        for (Customer cust : customerRepository.findByLastName(lastName)) {
+        for (User cust : customerRepository.findByLastName(lastName)) {
             result += "<div>" + cust.toString() + "</div>";
         }
 
@@ -80,10 +80,10 @@ public class WebController {
 
     @RequestMapping("/save")
     public String process() {
-        customerRepository.save(new Customer("Jack", "Smith"));
-        customerRepository.save(new Customer("Adam", "Johnson"));
-        customerRepository.save(new Customer("Kim", "Smith"));
-        customerRepository.save(new Customer("David", "Williams"));
+        customerRepository.save(new User("Jack", "Smith"));
+        customerRepository.save(new User("Adam", "Johnson"));
+        customerRepository.save(new User("Kim", "Smith"));
+        customerRepository.save(new User("David", "Williams"));
         butlerUserRepository.save(new ButlerUser("dsdd", "sdsd", "dsds"));
 
         List<String> phone1 = new ArrayList<>();

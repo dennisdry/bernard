@@ -10,6 +10,7 @@ import java.util.List;
  * like their contacts, inventory, messages, etc. we
  * have to manage by its getter and setter methods.
  */
+
 @Entity
 @Table(name = "butleruser")
 public class ButlerUser implements Serializable {
