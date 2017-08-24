@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringJpaPostgreSqlApplication {
+public class BernardApp {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringJpaPostgreSqlApplication.class, args);
+		SpringApplication.run(BernardApp.class, args);
 	}
 }
