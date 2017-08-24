@@ -1,7 +1,6 @@
 package com.butler.controller;
 
 import com.butler.model.*;
-import com.butler.repo.ButlerUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,8 +16,6 @@ public class WebController {
 
     @Autowired
     CustomerRepository customerRepository;
-    @Autowired
-    ButlerUserRepository butlerUserRepository;
 
     @RequestMapping("customer/findall")
     public String findAllCustomer() {
@@ -35,7 +32,7 @@ public class WebController {
     public String findAllUser() {
         String result = "<html>";
 
-        for (ButlerUser user : butlerUserRepository.findAll()) {
+        for (User user : customerRepository.findAll()) {
             result += "<div>" + user.toString() + "</div>";
         }
 
@@ -52,7 +49,7 @@ public class WebController {
     @RequestMapping("user/findbyid")
     public String findUserById(@RequestParam("id") long id) {
         String result = "";
-        result = butlerUserRepository.findOne(id).toString();
+        result = customerRepository.findOne(id).toString();
         return result;
     }
 
@@ -71,7 +68,7 @@ public class WebController {
     public String fetchDataByUserLastName(@RequestParam("lastname") String lastName) {
         String result = "<html>";
 
-        for (ButlerUser user : butlerUserRepository.findByLastName(lastName)) {
+        for (User user : customerRepository.findByLastName(lastName)) {
             result += "<div>" + user.toString() + "</div>";
         }
 
@@ -84,7 +81,7 @@ public class WebController {
         customerRepository.save(new User("Adam", "Johnson"));
         customerRepository.save(new User("Kim", "Smith"));
         customerRepository.save(new User("David", "Williams"));
-        butlerUserRepository.save(new ButlerUser("dsdd", "sdsd", "dsds"));
+        customerRepository.save(new User("dsdd", "sdsd", "dsds"));
 
         List<String> phone1 = new ArrayList<>();
         phone1.add("11232323232");
@@ -228,11 +225,17 @@ public class WebController {
         inventory.add(desk);
         inventory.add(pen);
 
+        Company superCorp = new Company("Super Corp", "Budapest", "Budapest Super str. 1", "1-2-333-444", "supercorp@email.com");
+        Company megaTrust = new Company("Mega Trust", "Budapest", "Budapest Mega str. 1", "2-3-444-555", "megatrust@email.com");
 
-        ButlerUser user1 = new ButlerUser("Peter", "Magpie", "petya", phone1, email1);
-        ButlerUser user2 = new ButlerUser("Dénes", "Dry", "dry", phone2, email2);
-        ButlerUser user3 = new ButlerUser("Thomas", "Varga", "anarch", phone3, email3);
-        ButlerUser user4 = new ButlerUser("Eszter", "Lukacs", "pengefutar", phone1, email2);
+        Position cEO = new Position("CEO");
+        Position accountManager = new Position("account manager");
+        Position techAnalyst = new Position("tech analyst");
+
+        User user1 = new User("Peter", "Magpie", "petya", phone1, email1);
+        User user2 = new User("Dénes", "Dry", "dry", phone2, email2);
+        User user3 = new User("Thomas", "Varga", "anarch", phone3, email3);
+        User user4 = new User("Eszter", "Lukacs", "pengefutar", phone1, email2);
 
         user1.addMessage(message1);
         user1.addMessage(message2);
@@ -254,13 +257,22 @@ public class WebController {
         user3.setTags(taglist1);
         user4.setTags(taglist2);
 
+        user1.setCompany(superCorp);
+        user2.setCompany(megaTrust);
+        user3.setCompany(superCorp);
+        user4.setCompany(megaTrust);
+
+        user1.setPosition(cEO);
+        user2.setPosition(techAnalyst);
+        user1.setPosition(accountManager);
+        user1.setPosition(accountManager);
 
         //Persisting all data
 
-        butlerUserRepository.save(user1);
-        butlerUserRepository.save(user2);
-        butlerUserRepository.save(user3);
-        butlerUserRepository.save(user4);
+        customerRepository.save(user1);
+        customerRepository.save(user2);
+        customerRepository.save(user3);
+        customerRepository.save(user4);
 
         return "Done";
     }

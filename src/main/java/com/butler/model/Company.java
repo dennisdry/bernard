@@ -27,7 +27,7 @@ public class Company {
     private String email;
 
 
-    public Company() {
+    protected Company() {
     }
 
     public Company(String name, String city, String address, String phone, String email) {
@@ -39,9 +39,7 @@ public class Company {
     }
 
 
-    public long getId() {
-        return id;
-    }
+    public long getId() { return id; }
 
     public String getName() {
         return name;
