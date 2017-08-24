@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bernard</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--<script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>-->
+    <script src="/assets/js/tether.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=w9y84faun4a7dzwzrc0sze959g9vm1ln0n4gjgpp1qnaki93"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
+
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700|Open+Sans:300,400,700&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/style/app.css" media="screen" />
+
+</head>
+<body>
+
+<div class="pattern-left pattern"></div>
+<div class="pattern-right pattern"></div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Write a New Message</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="write-content">
+                    <textarea name="writecontent" id="" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary btn-secondaction">Post</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<header class="header">
+    <div class="primary">
+        <div class="container">
+            <div class="row header-row align-items-center">
+                <div class="col col-lg-3 col-md-3 col-sm-8 col-xs-8 logo-wrapper">
+                    <div class="logo"></div>
+                </div>
+                <nav class="col col-7 text-right menu hidden-md-down">
+                    <ul class="main-menu list-unstyled">
+                        <li class="active">
+                            <a href="#">
+                                Messageboard
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Admin
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="col col-lg-2 hidden-md-down user-profile-wrapper">
+                    <div class="user-profile">
+                        <div class="image" data-toggle="tooltip" data-placement="bottom" title="Go to Your Profile">
+                            <a href="#">
+                                <img src="assets/img/profile/harry_smith.png" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col col-lg-2 col-md-2 col-sm-4 col-xs-4 mobile-menu-wrapper hidden-sm-up">
+                    <div class="mobile-menu" id="mobile-menu-button">
+                        <span class="icon">
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                 viewBox="-166 168 16 16" style="enable-background:new -166 168 16 16;" xml:space="preserve">
+                            <path class="st0" d="M-150,176.1c0,0.6-0.4,1-0.9,1h-14.2c-0.5,0-0.9-0.5-0.9-1l0,0c0-0.6,0.4-1,0.9-1h14.1
+                                C-150.4,175.1-150,175.5-150,176.1L-150,176.1z"/>
+                            <path class="st0" d="M-150,171c0,0.6-0.4,1-0.9,1h-14.2c-0.5,0-0.9-0.4-0.9-1l0,0c0-0.6,0.4-1,0.9-1h14.1
+                                C-150.4,170-150,170.4-150,171L-150,171z"/>
+                            <path class="st0" d="M-150,181c0,0.6-0.4,1-0.9,1h-14.2c-0.5,0-0.9-0.4-0.9-1l0,0c0-0.6,0.4-1,0.9-1h14.1
+                                C-150.4,180-150,180.4-150,181L-150,181z"/>
+                            </svg>
+
+                        </span>
+                    </div>
+                </div>
+                <div class="mobile-menu-open" id="mobile-menu-open">
+                    <ul class="mobile-menu list-unstyled">
+                        <li>Message Board</li>
+                        <li>Admin</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="secondary">
+        <div class="container">
+            <div class="row align-items-center secondary-row">
+                <div class="col hidden-md-down">
+                    <div class="today-info">
+                        <date class="date">
+                            Today is 2017. jun 21.
+                        </date>
+                        <div class="birthday">
+                            Kanye West's birthday. <a href="#">Send him</a> your best wishes!
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="upcoming-events text-right">
+                        <!--<p>
+                            There is no upcoming event.
+                        </p>-->
+                        <div class="new-notification">
+                            <a href="#">
+                                <span class="text">
+                                1 new notification
+                            </span>
+                                <span class="icon"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <div class="chat-main">
+
+            <div class="row">
+                <div class="col text-center">
+                    <button class="write-new main-button mx-auto" data-toggle="modal" data-target="#myModal">
+                        Write a New Message
+                    </button>
+                </div>
+            </div>
+
+            <div class="main-chat-card" id="mainchat-1">
+                <div class="row">
+                    <div class="col-lg-11 col-md-11 col-sm-10 col-xs-10 message-col">
+                        <div class="card">
+                            <date class="date">
+                                Today 19:11
+                            </date>
+                            <div class="message-body">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dictum dui in condimentum porta. Etiam leo mauris, tincidunt ac libero ut, laoreet vestibulum justo. Nullam elementum nunc sed quam finibus egestas. Aliquam ullamcorper ante risus, sit amet accumsan odio vestibulum placerat. Etiam nec leo convallis, fringilla quam a, vestibulum ipsum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed sed auctor enim. Aenean id sollicitudin erat. Nullam at ornare ipsum.
+                            </div>
+                            <div class="action-bar">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <span class="tag">
+                                            <a href="#">
+                                                office
+                                            </a>
+                                        </span>
+                                        <span class="tag">
+                                        <a href="#">
+                                            repair
+                                        </a>
+                                    </span>
+                                    </div>
+                                    <div class="col text-right right-actions">
+                                        <span class="comments-number" id="mainchat-comment-1">
+                                            2 <span class="hidden-md-down">comments</span>
+                                        </span>
+                                        <span class="reply-action">
+                                            <span class="text">
+                                                Reply
+                                            </span>
+                                            <span class="icon"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2 profile-col">
+                        <div class="profile">
+                            <img src="assets/img/profile/suzie_collins.png" />
+                            <div class="text hidden-md-up">
+                                User Name
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="replies" id="replies-1">
+                <div class="reply-chat-card">
+                    <div class="row">
+                        <div class="col-10 push-2">
+                            <div class="row">
+                                <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                    <div class="card">
+                                        <date class="date">
+                                            Today 19:11
+                                        </date>
+                                        <div class="message-body">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dictum dui in condimentum porta. Etiam leo mauris, tincidunt ac libero ut, laoreet vestibulum justo. Nullam elementum nunc sed quam finibus egestas. Aliquam ullamcorper ante risus, sit amet accumsan odio vestibulum placerat. Etiam nec leo convallis, fringilla quam a, vestibulum ipsum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed sed auctor enim. Aenean id sollicitudin erat. Nullam at ornare ipsum.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2 profile-col">
+                                    <div class="profile">
+                                        <img src="assets/img/profile/mary_goldberg.png" />
+                                        <div class="text hidden-md-up">
+                                            User Name
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reply-chat-card">
+                    <div class="row">
+                        <div class="col-10 push-2">
+                            <div class="row">
+                                <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                    <div class="card">
+                                        <date class="date">
+                                            Today 19:11
+                                        </date>
+                                        <div class="message-body">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dictum dui in condimentum porta. Etiam leo mauris, tincidunt ac libero ut, laoreet vestibulum justo. Nullam elementum nunc sed quam finibus egestas. Aliquam ullamcorper ante risus, sit amet accumsan odio vestibulum placerat. Etiam nec leo convallis, fringilla quam a, vestibulum ipsum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed sed auctor enim. Aenean id sollicitudin erat. Nullam at ornare ipsum.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2 profile-col">
+                                    <div class="profile">
+                                        <img src="assets/img/profile/joel_christopherson.png" />
+                                        <div class="text hidden-md-up">
+                                            User Name
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-chat-card" id="mainchat-2">
+                <div class="row">
+                    <div class="col-lg-11 col-md-11 col-sm-10 col-xs-10 message-col">
+                        <div class="card">
+                            <date class="date">
+                                Today 19:11
+                            </date>
+                            <div class="message-body">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dictum dui in condimentum porta. Etiam leo mauris, tincidunt ac libero ut, laoreet vestibulum justo. Nullam elementum nunc sed quam finibus egestas. Aliquam ullamcorper ante risus, sit amet accumsan odio vestibulum placerat. Etiam nec leo convallis, fringilla quam a, vestibulum ipsum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed sed auctor enim. Aenean id sollicitudin erat. Nullam at ornare ipsum.
+                            </div>
+                            <div class="action-bar">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <span class="tag">
+                                            <a href="#">
+                                                office
+                                            </a>
+                                        </span>
+                                        <span class="tag">
+                                        <a href="#">
+                                            repair
+                                        </a>
+                                    </span>
+                                    </div>
+                                    <div class="col text-right right-actions">
+                                        <span class="comments-number" id="mainchat-comment-1">
+                                            2 <span class="hidden-md-down">comments</span>
+                                        </span>
+                                        <span class="reply-action">
+                                            <span class="text">
+                                                Reply
+                                            </span>
+                                            <span class="icon"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2 profile-col">
+                        <div class="profile">
+                            <img src="assets/img/profile/harry_smith.png" />
+                            <div class="text hidden-md-up">
+                                User Name
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col">
+                <p>
+                    All rights reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+
+    $("#mainchat-comment-1").click(function() {
+        $("#replies-1").slideToggle( "slow" );
+    });
+
+    $("#mobile-menu-button").click(function() {
+        $("#mobile-menu-open").slideToggle( "slow" );
+    });
+</script>
+
+</body>
+</html>
