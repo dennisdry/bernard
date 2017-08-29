@@ -1,6 +1,7 @@
 package com.butler.controller;
 
 import com.butler.model.*;
+import com.butler.repo.MessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,6 +17,14 @@ public class WebController {
 
     @Autowired
     CustomerRepository customerRepository;
+
+    @Autowired
+    MessageRepository messageRepository;
+
+    @RequestMapping("message/findall")
+    public String findAllMessage() {
+        return "LOL";
+    }
 
     @RequestMapping("customer/findall")
     public String findAllCustomer() {
