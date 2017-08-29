@@ -23,6 +23,8 @@ public class User implements Serializable {
     @Column(name = "username")
     private String userName;
 
+
+
     @ManyToOne(cascade = CascadeType.ALL)
     private Position position;
 
