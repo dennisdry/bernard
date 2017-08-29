@@ -20,13 +20,11 @@ public class MessageController {
         this.messageRepository = messageRepository;
     }
 
-    @CrossOrigin
     @RequestMapping("/findall")
     public Iterable<Message> getMessages() {
         return  messageRepository.findAll();
     }
 
-    @CrossOrigin
     @RequestMapping(value = "/{id}")
     public Message getOneMessage(@PathVariable("id") long id) {
         return messageRepository.findOne(id);
