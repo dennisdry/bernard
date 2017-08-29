@@ -30,10 +30,6 @@ public class Message {
         this.messageType = messageType;
     }
 
-    public long getId() {
-        return id;
-    }
-
     public String getMessage() {
         return message;
     }
