@@ -48,7 +48,7 @@ public class WebController {
         return result + "</html>";
     }
 
-    @RequestMapping("customer/findbyid")
+    @RequestMapping("customer/findbyid/")
     public String findCustomerById(@RequestParam("id") long id) {
         String result = "";
         result = customerRepository.findOne(id).toString();

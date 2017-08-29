@@ -11,7 +11,7 @@ public class MessageController {
     @Autowired
     MessageRepository messageRepository;
 
-    @RequestMapping("message/findall")
+    @RequestMapping("/message/findall")
     public String findAllMessage() {
         return "LOL";
     }
