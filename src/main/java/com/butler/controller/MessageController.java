@@ -24,7 +24,7 @@ public class MessageController {
 
     @RequestMapping("/one")
     public Message getOne() {
-        return  messageRepository.getOne(1l);
+        return  messageRepository.findOne(1l);
     }
 
 }
