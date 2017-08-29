@@ -168,4 +168,7 @@ Temporary Items
 /target/*
 
 
+*/target/**
+*/target/*
+
 # End of https://www.gitignore.io/api/macos,linux,eclipse,intellij+iml
