@@ -25,7 +25,7 @@ public class MessageController {
 
     @RequestMapping(value = "/{id}")
     public Message getOneMessage(@PathVariable("id") long id) {
-        return  messageRepository.getOne(id);
+        return messageRepository.getOne(id);
     }
 
 }
