@@ -19,7 +19,7 @@ public class TestMessageController {
         this.testMessageRepository = testMessageRepository;
     }
 
-    @RequestMapping("/findall")
+    @RequestMapping("/all")
     public Iterable<TestMessage> getMessages() {
         return  testMessageRepository.findAll();
     }
@@ -34,12 +34,17 @@ public class TestMessageController {
         testMessageRepository.save(message);
     }
 
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{id}/delete", method = RequestMethod.DELETE)
     public void DeleteMessage(@PathVariable("id") long id) {
         testMessageRepository.delete(id);
     }
 
-    
+    @RequestMapping(value = "/{id}/update", method = RequestMethod.PUT)
+    public void UpdateMessage(@PathVariable long id, @RequestBody TestMessage message) {
+        testMessageRepository.save(message);
+    }
+
+
 
     }
 
