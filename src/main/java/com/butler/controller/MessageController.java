@@ -30,15 +30,16 @@ public class MessageController {
         return messageRepository.findOne(id);
     }
 
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
-    public void DeleteMessage(@PathVariable("id") long id) {
-        messageRepository.delete(id);
-    }
-
-    @RequestMapping(value = "/sendmessage", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/sendmessage", method = RequestMethod.POST)
     public void persistMessage(@RequestBody Message message) {
         messageRepository.save(message);
     }
+
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
+    public void DeleteMessage(@PathVariable("id") long id) {
+        messageRepository.delete(id);
+    }
+    
     }
 
 
