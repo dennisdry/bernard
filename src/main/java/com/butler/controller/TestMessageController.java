@@ -29,7 +29,7 @@ public class TestMessageController {
         return testMessageRepository.findOne(id);
     }
 
-    @RequestMapping(value = "/sendmessage", method = RequestMethod.POST)
+    @RequestMapping(value = "/send", method = RequestMethod.POST)
     public void persistMessage(@RequestBody TestMessage message) {
         testMessageRepository.save(message);
     }
@@ -41,7 +41,7 @@ public class TestMessageController {
 
     @RequestMapping(value = "/{id}/update", method = RequestMethod.PUT)
     public void UpdateMessage(@PathVariable long id, @RequestBody TestMessage message) {
-        testMessageRepository.save(message);
+        testMessageRepository.findOne(id).setMessage(message.getMessage());
     }
 
 
