@@ -30,7 +30,7 @@ public class MessageController {
         return messageRepository.findOne(id);
     }
 
-    @RequestMapping(value = "/delete/{id}")
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
     public void DeleteMessage(@PathVariable("id") long id) {
         messageRepository.delete(id);
     }
