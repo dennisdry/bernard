@@ -28,14 +28,11 @@ public class MessageController {
     public Message getOneMessage(@PathVariable("id") long id) {
         return messageRepository.findOne(id);
     }
-//
-//    @RequestMapping(value = "/sendMessage", method = RequestMethod.POST)
-//    public Message persistPerson(@RequestBody PersonDTO person) {
-//        if (personService.isValid(person)) {
-//            personRepository.persist(person);
-//            return ResponseEntity.status(HttpStatus.CREATED).build();
-//        }
-//        return ResponseEntity.status(HttpStatus.I_AM_A_TEAPOT).build();
-//    }
 
-}
+    @RequestMapping(value = "/sendmessage", method = RequestMethod.POST)
+    public void persistMessage(@RequestBody Message message) {
+        messageRepository.save(message);
+    }
+    }
+
+

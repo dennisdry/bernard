@@ -25,8 +25,8 @@ public class Message {
     public Message() {
     }
 
-    public Message(String name, MessageType messageType) {
-        this.message = name;
+    public Message(String message, MessageType messageType) {
+        this.message = message;
         this.messageType = messageType;
     }
 
