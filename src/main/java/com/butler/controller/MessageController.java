@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/message")
 public class MessageController {
 
+    @Autowired
     private final MessageRepository messageRepository;
 
     @Autowired
@@ -27,6 +28,11 @@ public class MessageController {
     @RequestMapping(value = "/{id}")
     public Message getOneMessage(@PathVariable("id") long id) {
         return messageRepository.findOne(id);
+    }
+
+    @RequestMapping(value = "/delete/{id}")
+    public void DeleteMessage(@PathVariable("id") long id) {
+        messageRepository.delete(id);
     }
 
     @RequestMapping(value = "/sendmessage", method = RequestMethod.POST)
