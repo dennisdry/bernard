@@ -37,6 +37,10 @@ public class TestMessageController {
         testMessageRepository.delete(id);
     }
 
+    @RequestMapping("/megakill")
+    public void killall() {
+        testMessageRepository.deleteAll();
+    }
 
 //    @RequestMapping(value = "/{id}/update", method = RequestMethod.PUT)
 //    public void UpdateMessage(@PathVariable long id, @RequestBody TestMessage message) {
