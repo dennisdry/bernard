@@ -35,7 +35,7 @@ public class MessageController {
         messageRepository.delete(id);
     }
 
-    @RequestMapping(value = "/sendmessage", method = RequestMethod.POST)
+    @RequestMapping(value = "/sendmessage", method = RequestMethod.DELETE)
     public void persistMessage(@RequestBody Message message) {
         messageRepository.save(message);
     }
