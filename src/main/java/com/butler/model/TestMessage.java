@@ -13,7 +13,7 @@ public class TestMessage {
 
     private String message;
 
-    public TestMessage(){
+    public TestMessage() {
 
     }
 

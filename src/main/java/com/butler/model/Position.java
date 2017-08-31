@@ -13,7 +13,10 @@ public class Position {
     @Column(name = "name")
     private String name;
 
-    public Position(){};
+    public Position() {
+    }
+
+    ;
 
     public Position(String name) {
         this.name = name;

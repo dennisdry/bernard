@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class BernardApp {
 
-	public static void main(String[] args) {
-		SpringApplication.run(BernardApp.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(BernardApp.class, args);
+    }
 }

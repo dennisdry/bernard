@@ -1,6 +1,5 @@
 package com.butler.controller;
 
-import com.butler.model.Message;
 import com.butler.model.TestMessage;
 import com.butler.repo.TestMessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/message")
 public class TestMessageController {
 
-    @Autowired
     private final TestMessageRepository testMessageRepository;
 
     @Autowired
@@ -21,7 +19,7 @@ public class TestMessageController {
 
     @RequestMapping("/all")
     public Iterable<TestMessage> getMessages() {
-        return  testMessageRepository.findAll();
+        return testMessageRepository.findAll();
     }
 
     @RequestMapping(value = "/{id}")
@@ -35,17 +33,16 @@ public class TestMessageController {
     }
 
     @RequestMapping(value = "/{id}/delete", method = RequestMethod.DELETE)
-    public void DeleteMessage(@PathVariable("id") long id) {
+    public void deleteMessage(@PathVariable("id") long id) {
         testMessageRepository.delete(id);
     }
 
-    @RequestMapping(value = "/{id}/update", method = RequestMethod.PUT)
-    public void UpdateMessage(@PathVariable long id, @RequestBody TestMessage message) {
-        testMessageRepository.findOne(id).setMessage(message.getMessage());
-    }
+
+//    @RequestMapping(value = "/{id}/update", method = RequestMethod.PUT)
+//    public void UpdateMessage(@PathVariable long id, @RequestBody TestMessage message) {
+//    }
 
 
-
-    }
+}
 
 

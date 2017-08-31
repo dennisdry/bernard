@@ -39,7 +39,9 @@ public class Company {
     }
 
 
-    public long getId() { return id; }
+    public long getId() {
+        return id;
+    }
 
     public String getName() {
         return name;

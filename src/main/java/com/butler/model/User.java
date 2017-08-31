@@ -24,7 +24,6 @@ public class User implements Serializable {
     private String userName;
 
 
-
     @ManyToOne(cascade = CascadeType.ALL)
     private Position position;
 
