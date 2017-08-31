@@ -1,4 +1,4 @@
-package com.butler.model;
+package com.bernardapp.model;
 
 import javax.persistence.*;
 

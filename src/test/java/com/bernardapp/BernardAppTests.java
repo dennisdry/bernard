@@ -1,4 +1,4 @@
-package com.butler;
+package com.bernardapp;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

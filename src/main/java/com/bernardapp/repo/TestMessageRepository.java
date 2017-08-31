@@ -1,6 +1,6 @@
-package com.butler.repo;
+package com.bernardapp.repo;
 
-import com.butler.model.TestMessage;
+import com.bernardapp.model.TestMessage;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface TestMessageRepository extends JpaRepository<TestMessage, Long> {

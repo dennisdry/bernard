@@ -1,7 +1,7 @@
-package com.butler.controller;
+package com.bernardapp.controller;
 
-import com.butler.model.TestMessage;
-import com.butler.repo.TestMessageRepository;
+import com.bernardapp.model.TestMessage;
+import com.bernardapp.repo.TestMessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
