@@ -37,7 +37,7 @@ public class TestMessageController {
         testMessageRepository.delete(id);
     }
 
-    @RequestMapping("/megakill")
+    @RequestMapping(value = "/megakill", method = RequestMethod.DELETE)
     public void killall() {
         testMessageRepository.deleteAll();
     }
