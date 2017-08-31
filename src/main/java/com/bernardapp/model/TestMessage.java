@@ -1,9 +1,7 @@
 package com.bernardapp.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -14,15 +12,21 @@ public class TestMessage {
 
     private String message;
 
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "DATE_DATE")
     private Date date;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "CREATED_DATE")
+    private LocalDate localDate;
+
 
     public TestMessage() {
 
     }
 
-    public TestMessage(String message, Date date) {
+    public TestMessage(String message) {
         this.message = message;
-        this.date = date;
     }
 
     public long getId() {
@@ -37,8 +41,8 @@ public class TestMessage {
         return date;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public LocalDate getLocalDate() {
+        return localDate;
     }
 
     public String getMessage() {
