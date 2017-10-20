@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "customer")
+@Table
 public class User implements Serializable {
 
     private static final long serialVersionUID = -3009157732242241606L;
@@ -23,6 +23,11 @@ public class User implements Serializable {
     @Column(name = "username")
     private String userName;
 
+    @Column(name="email")
+    private String email;
+
+    @Column(name="password")
+    private String password;
 
     @ManyToOne(cascade = CascadeType.ALL)
     private Position position;
@@ -36,7 +41,7 @@ public class User implements Serializable {
 
     @ElementCollection
     @CollectionTable
-    private List<String> email;
+    private List<String> secondaryEmail;
 
     @ManyToMany(cascade = CascadeType.ALL)
     private List<Stock> inventory = new ArrayList<>();
@@ -61,14 +66,27 @@ public class User implements Serializable {
         this.userName = userName;
     }
 
-    public User(String firstName, String lastName, String userName, List<String> phone, List<String> email) {
+    public User(String firstName, String lastName, String userName, String email, List<String> phone, List<String> secondaryEmail) {
 
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
         this.phone = phone;
         this.email = email;
+        this.secondaryEmail = secondaryEmail;
 
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getFirstName() {
@@ -95,64 +113,20 @@ public class User implements Serializable {
         this.userName = userName;
     }
 
-    public List<String> getPhone() {
-        return phone;
-    }
-
-    public void setPhone(List<String> phones) {
-        this.phone = phones;
-    }
-
-    public void addPhone(String phone) {
-        this.phone.add(phone);
-    }
-
-    public List<String> getEmail() {
+    public String getEmail() {
         return email;
     }
 
-    public void setEmail(List<String> emails) {
-        this.email = emails;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public void addEmail(String email) {
-        this.email.add(email);
+    public String getPassword() {
+        return password;
     }
 
-    public List<Stock> getInventory() {
-        return inventory;
-    }
-
-    public void setInventory(List<Stock> items) {
-        this.inventory = items;
-    }
-
-    public void addItemWithStockToInventory(Stock stock) {
-        this.inventory.add(stock);
-    }
-
-    public List<Message> getMessages() {
-        return messages;
-    }
-
-    public void setMessages(ArrayList<Message> messages) {
-        this.messages = messages;
-    }
-
-    public void addMessage(Message message) {
-        this.messages.add(message);
-    }
-
-    public List<Tag> getTags() {
-        return tags;
-    }
-
-    public void setTags(List<Tag> tags) {
-        this.tags = tags;
-    }
-
-    public void addTag(Tag tag) {
-        this.tags.add(tag);
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public Position getPosition() {
@@ -169,6 +143,46 @@ public class User implements Serializable {
 
     public void setCompany(Company company) {
         this.company = company;
+    }
+
+    public List<String> getPhone() {
+        return phone;
+    }
+
+    public void setPhone(List<String> phone) {
+        this.phone = phone;
+    }
+
+    public List<String> getSecondaryEmail() {
+        return secondaryEmail;
+    }
+
+    public void setSecondaryEmail(List<String> secondaryEmail) {
+        this.secondaryEmail = secondaryEmail;
+    }
+
+    public List<Stock> getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(List<Stock> inventory) {
+        this.inventory = inventory;
+    }
+
+    public List<Message> getMessages() {
+        return messages;
+    }
+
+    public void setMessages(List<Message> messages) {
+        this.messages = messages;
+    }
+
+    public List<Tag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<Tag> tags) {
+        this.tags = tags;
     }
 
     @Override

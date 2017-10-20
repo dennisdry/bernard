@@ -12,8 +12,6 @@ public class TestMessage {
 
     private String message;
 
-
-
     public TestMessage() {
 
     }
@@ -30,6 +28,7 @@ public class TestMessage {
         this.id = id;
     }
 
+
     public String getMessage() {
         return message;
     }
@@ -37,4 +36,6 @@ public class TestMessage {
     public void setMessage(String message) {
         this.message = message;
     }
+
+
 }
