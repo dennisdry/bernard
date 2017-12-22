@@ -12,11 +12,6 @@ public class TestMessage {
 
     private String message;
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 031f344... dates
     public TestMessage() {
 
     }
@@ -36,7 +31,6 @@ public class TestMessage {
 <<<<<<< HEAD
 
 =======
->>>>>>> 031f344... dates
     public String getMessage() {
         return message;
     }
